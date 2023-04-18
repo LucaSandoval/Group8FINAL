@@ -7,6 +7,9 @@ public class UIController : MonoBehaviour
 {
     public GameObject heldIngredientParent;
 
+    public Text resultText;
+    private float resultTextAlpha;
+
     private PlayerController playerController;
     private List<GameObject> visualIngredients;
     private GameObject ingredientVisualsPrefab;
@@ -75,7 +78,20 @@ public class UIController : MonoBehaviour
             curProg = 0;
         }
 
-        
+        if (resultTextAlpha > 0)
+        {
+            resultTextAlpha -= Time.deltaTime;
+            resultText.gameObject.SetActive(true);
+        } else
+        {
+            resultText.gameObject.SetActive(false);
+        }       
+    }
+
+    public void ShowResults(string text, float time)
+    {
+        resultText.text = text;
+        resultTextAlpha = time;
     }
 
     public void GenerateHeldVisuals()

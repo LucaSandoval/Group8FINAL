@@ -17,6 +17,8 @@ public class BeltDelivery : Interactable
         playerController.RemoveIngredient(completedOrder.order.product);
         Destroy(completedOrder.thisObj);
         orderController.currentOrders.Remove(completedOrder);
+
+        uiController.ShowResults("Order Complete !", 2f);
     }
 
     private OrderController.OrderObject NeededSushiInInven()

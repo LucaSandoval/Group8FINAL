@@ -8,7 +8,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected float range = 1.7f;
     private GameObject player;
-    private UIController uiController;
+    protected UIController uiController;
     protected PlayerController playerController;
     protected OrderController orderController;
 

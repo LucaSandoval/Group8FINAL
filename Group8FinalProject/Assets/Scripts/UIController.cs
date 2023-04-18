@@ -82,6 +82,7 @@ public class UIController : MonoBehaviour
         {
             resultTextAlpha -= Time.deltaTime;
             resultText.gameObject.SetActive(true);
+            resultText.color = new Color(resultText.color.r, resultText.color.g, resultText.color.b, resultTextAlpha);
         } else
         {
             resultText.gameObject.SetActive(false);

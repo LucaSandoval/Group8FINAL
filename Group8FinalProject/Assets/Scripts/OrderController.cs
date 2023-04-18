@@ -66,6 +66,14 @@ public class OrderController : MonoBehaviour
             {
                 currentOrders[i].timer -= Time.deltaTime;
                 currentOrders[i].thisObj.transform.GetChild(0).GetComponent<Slider>().value = currentOrders[i].timer;
+
+                if(currentOrders[i].timer <= 0)
+                {
+                    Destroy(currentOrders[i].thisObj);
+                    currentOrders.Remove(currentOrders[i]);
+
+                    uIController.ShowResults("Order Failed !", 2f);
+                }
             }
         }
     }

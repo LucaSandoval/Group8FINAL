@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
         uIController.GenerateHeldVisuals();
     }
 
+    public void RemoveIngredient(Ingredient ingredient)
+    {
+        heldIngredients.Remove(ingredient);
+        uIController.GenerateHeldVisuals();
+    }
+
     public bool PlayerHasIngredient(Ingredient ingredient)
     {
         foreach (Ingredient i in heldIngredients)
@@ -89,5 +95,6 @@ public enum Ingredient
 {
     rice,
     seaweed,
-    salmon
+    salmon,
+    salmonMaki
 }

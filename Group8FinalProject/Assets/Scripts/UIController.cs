@@ -89,15 +89,23 @@ public class UIController : MonoBehaviour
 
         for(int i = 0; i < playerController.heldIngredients.Count; i++)
         {
-            GameObject newVisual = Instantiate(ingredientVisualsPrefab);
-
-            newVisual.GetComponent<Image>().sprite = playerController.getIngredientSprite(playerController.heldIngredients[i]);
-            newVisual.transform.GetChild(0).GetComponent<Text>().text = 
-                playerController.getIngredientName(playerController.heldIngredients[i]);
-
-            newVisual.transform.SetParent(heldIngredientParent.transform, false);
-
-            visualIngredients.Add(newVisual);
+            SpawnNewIngredToParent(heldIngredientParent.transform, playerController.heldIngredients[i], true);
         }
+    }
+
+    public void SpawnNewIngredToParent(Transform parent, Ingredient ingredient, bool forInven)
+    {
+        GameObject newVisual = Instantiate(ingredientVisualsPrefab);
+
+        newVisual.GetComponent<Image>().sprite = playerController.getIngredientSprite(ingredient);
+        newVisual.transform.GetChild(0).GetComponent<Text>().text =
+            playerController.getIngredientName(ingredient);
+
+        newVisual.transform.SetParent(parent.transform, false);
+
+        if (forInven)
+        {
+            visualIngredients.Add(newVisual);
+        }        
     }
 }

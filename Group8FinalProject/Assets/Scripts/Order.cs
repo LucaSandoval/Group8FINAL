@@ -6,5 +6,6 @@ using UnityEngine;
 public class Order : ScriptableObject
 {
     public string orderName;
+    public Ingredient product;
     public Ingredient[] ingredients;
 }

@@ -10,6 +10,7 @@ public abstract class Interactable : MonoBehaviour
     private GameObject player;
     private UIController uiController;
     protected PlayerController playerController;
+    protected OrderController orderController;
 
     private bool inRange;
 
@@ -23,6 +24,7 @@ public abstract class Interactable : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         uiController = GameObject.Find("GameController").GetComponent<UIController>();
         playerController = GameObject.Find("GameController").GetComponent<PlayerController>();
+        orderController = GameObject.Find("GameController").GetComponent<OrderController>();
         canInteract = true;
         canSeeVisual = true;
     }

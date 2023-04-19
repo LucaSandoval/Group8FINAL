@@ -50,8 +50,7 @@ public class OrderController : MonoBehaviour
 
         stepId = -1;
         NextStep();
-        soundPlayer.PlaySound("SushiMusic");
-        soundPlayer.PlaySound("Crowd");
+        
     }
 
     public void FixedUpdate()

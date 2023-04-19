@@ -22,6 +22,7 @@ public class OrderController : MonoBehaviour
     private GameObject orderPrefab;
     public GameObject orderParent;
     private UIController uIController;
+    private SoundPlayer soundPlayer;
 
     public List<OrderObject> currentOrders;
 
@@ -44,10 +45,13 @@ public class OrderController : MonoBehaviour
     {
         uIController = GetComponent<UIController>();
         orderPrefab = Resources.Load<GameObject>("OrderPrefab");
+        soundPlayer = GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundPlayer>();
         currentOrders = new List<OrderObject>();
 
         stepId = -1;
         NextStep();
+        soundPlayer.PlaySound("SushiMusic");
+        soundPlayer.PlaySound("Crowd");
     }
 
     public void FixedUpdate()

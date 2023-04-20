@@ -23,6 +23,7 @@ public class BeltDelivery : Interactable
         Destroy(completedOrder.thisObj);
         orderController.currentOrders.Remove(completedOrder);
 
+        soundPlayer.PlaySound("Complete");
         uiController.ShowResults("Order Complete !", 2f);
     }
 

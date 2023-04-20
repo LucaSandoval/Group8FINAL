@@ -7,8 +7,10 @@ public class PlayerLookAt : MonoBehaviour
     public bool distHide;
     private GameObject player;
     private GameObject text;
+    private SequenceController sequenceController;
     void Start()
     {
+        sequenceController = GameObject.FindGameObjectWithTag("GameController").GetComponent<SequenceController>();
         player = GameObject.FindGameObjectWithTag("Player");
         if(distHide)
         {
@@ -31,7 +33,13 @@ public class PlayerLookAt : MonoBehaviour
 
         if (distHide)
         {
-            text.SetActive(!(Vector3.Distance(player.transform.position, transform.position) < 2f));
+            if (sequenceController.scaryLighting.activeSelf == false)
+            {
+                text.SetActive(!(Vector3.Distance(player.transform.position, transform.position) < 2f));
+            } else
+            {
+                text.SetActive(false);
+            }            
         }
     }
 }

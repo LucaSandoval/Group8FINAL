@@ -6,6 +6,12 @@ public class SequenceController : MonoBehaviour
 {
     public GameObject normalLighting;
     public GameObject scaryLighting;
+    public GameObject rubble;
+    public GameObject lockedDoor;
+    public GameObject unlockedDoor;
+    public GameObject nonHiddenStuff;
+    public GameObject hiddenstuff;
+
     private SoundPlayer soundPlayer;
 
     public void Start()

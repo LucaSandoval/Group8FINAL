@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191ff20927887c544b3da437b1679556, type: 3}
+  m_Name: Sparks
+  m_EditorClassIdentifier: 
+  soundName: Sparks
+  clip: {fileID: 8300000, guid: f1ea7ac0ba5830e408afb05073ec14e0, type: 3}
+  baseVolume: 0.8
+  basePitch: 1
+  loop: 0
+  audioMixerGroup: {fileID: 0}
+  source: {fileID: 0}

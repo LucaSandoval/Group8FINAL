@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject steamBeam;
     public List<Ingredient> heldIngredients;
 
     public IngredientData[] data;
@@ -27,6 +28,16 @@ public class PlayerController : MonoBehaviour
     public void Start()
     {
         heldIngredients = new List<Ingredient>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ClearHeldIngredients();
+        }
+
+        steamBeam.SetActive(PlayerHasIngredient(Ingredient.steelBeam));
     }
 
     public void ClearHeldIngredients()
@@ -103,5 +114,6 @@ public enum Ingredient
     smokedSalmonRoll,
     gear,
     unagi,
-    unagiMaki
+    unagiMaki,
+    steelBeam
 }

@@ -11,6 +11,8 @@ public abstract class Interactable : MonoBehaviour
     protected UIController uiController;
     protected PlayerController playerController;
     protected OrderController orderController;
+    protected SoundPlayer soundPlayer;
+    protected SequenceController sequenceController;
 
     private bool inRange;
 
@@ -25,6 +27,8 @@ public abstract class Interactable : MonoBehaviour
         uiController = GameObject.Find("GameController").GetComponent<UIController>();
         playerController = GameObject.Find("GameController").GetComponent<PlayerController>();
         orderController = GameObject.Find("GameController").GetComponent<OrderController>();
+        soundPlayer = GameObject.Find("SoundController").GetComponent<SoundPlayer>();
+        sequenceController = GameObject.Find("GameController").GetComponent<SequenceController>();
         canInteract = true;
         canSeeVisual = true;
     }

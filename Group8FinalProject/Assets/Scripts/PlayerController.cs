@@ -96,5 +96,12 @@ public enum Ingredient
     rice,
     seaweed,
     salmon,
-    salmonMaki
+    salmonRoll,
+    tuna,
+    smokedSalmon,
+    tunaRoll,
+    smokedSalmonRoll,
+    gear,
+    unagi,
+    unagiMaki
 }

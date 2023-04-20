@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BeltDelivery : Interactable
 {
+    public Transform sushiSpawnPoint;
     public override void Update()
     {
         base.Update();
@@ -14,6 +15,10 @@ public class BeltDelivery : Interactable
     public override void Interact()
     {
         OrderController.OrderObject completedOrder = NeededSushiInInven();
+
+        GameObject newSushiPrefab = Instantiate(completedOrder.order.sushiPrefab);
+        newSushiPrefab.transform.position = sushiSpawnPoint.transform.position;
+
         playerController.RemoveIngredient(completedOrder.order.product);
         Destroy(completedOrder.thisObj);
         orderController.currentOrders.Remove(completedOrder);
